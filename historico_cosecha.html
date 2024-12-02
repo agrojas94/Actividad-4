@@ -44,12 +44,12 @@
             const ctx = document.getElementById('graficaCosecha').getContext('2d');
             const cantidades = fechas.map(fecha => datosCosecha[fecha][cultivo] || 0);
 
-            // Limpiar la gráfica anterior
+            
             if (window.grafica) {
                 window.grafica.destroy();
             }
 
-            // Crear nueva gráfica
+            
             window.grafica = new Chart(ctx, {
                 type: 'bar',
                 data: {
