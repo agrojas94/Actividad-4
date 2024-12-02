@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Cosecha</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Datos de ejemplo para la gráfica
+        const datosCosecha = {
+            "2024-11-25": { "papa": 50, "mora": 30, "frijol": 20 },
+            "2024-11-26": { "papa": 40, "mora": 20, "frijol": 25 },
+            "2024-11-27": { "papa": 60, "mora": 10, "frijol": 30 },
+            "2024-11-28": { "papa": 70, "mora": 40, "frijol": 15 },
+            "2024-11-29": { "papa": 80, "mora": 50, "frijol": 20 },
+        };
+
+        function filtrarCosecha() {
+            const fechaInicio = document.getElementById("fechaInicio").value;
+            const fechaFin = document.getElementById("fechaFin").value;
+            const cultivoSeleccionado = document.getElementById("cultivo").value;
+
+            let totalCosecha = 0;
+            const fechasFiltradas = [];
+
+            for (const fecha in datosCosecha) {
+                if (fecha >= fechaInicio && fecha <= fechaFin) {
+                    if (datosCosecha[fecha][cultivoSeleccionado] !== undefined) {
+                        totalCosecha += datosCosecha[fecha][cultivoSeleccionado];
+                        fechasFiltradas.push(fecha);
+                    }
+                }
+            }
+
+            // Mostrar el total de cosecha
+            document.getElementById("resultado").innerText = `Cantidad total de cosecha de ${cultivoSeleccionado} entre ${fechaInicio} y ${fechaFin}: ${totalCosecha}`;
+
+            // Actualizar la gráfica
+            actualizarGrafica(fechasFiltradas, cultivoSeleccionado);
+        }
+
+        function actualizarGrafica(fechas, cultivo) {
+            const ctx = document.getElementById('graficaCosecha').getContext('2d');
+            const cantidades = fechas.map(fecha => datosCosecha[fecha][cultivo] || 0);
+
+            // Limpiar la gráfica anterior
+            if (window.grafica) {
+                window.grafica.destroy();
+            }
+
+            // Crear nueva gráfica
+            window.grafica = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: fechas,
+                    datasets: [{
+                        label: `Cosecha de ${cultivo}`,
+                        data: cantidades,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function volverAlMenu() {
+            window.location.href = "menu.html"; // Cambia "menu_inicial.html" por el nombre de tu archivo de menú
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Histórico de Cosecha</h1>
+        <form onsubmit="event.preventDefault(); filtrarCosecha();">
+            <div class="form-group">
+                <label for="fechaInicio">Fecha Inicio:</label>
+                <input type="date" id="fechaInicio" name="fechaInicio" required>
+            </div>
+            <div class="form-group">
+                <label for="fechaFin">Fecha Fin:</label>
+                <input type="date" id="fechaFin" name="fechaFin" required>
+            </div>
+            <div class="form-group">
+                <label for="cultivo">Cultivo:</label>
+                <select id="cultivo" name="cultivo" required>
+                    <option value="papa">Papa</option>
+                    <option value="mora">Mora</option>
+                    <option value="frijol">Frijol</option>
+                    <option value="maiz">Maíz</option>
+                </select>
+            </div>
+            <button type="submit">Ejecutar Consulta</button>
+            <button type="button" onclick="volverAlMenu()">Volver al Menú</button>
+        </form>
+        <div id="resultado"></div>
+        <canvas id="graficaCosecha" width="400" height="200"></canvas>
+    </div>
+</body>
+</html>

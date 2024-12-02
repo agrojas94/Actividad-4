@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    !--background: linear-gradient(to right, #4facfe, #00f2fe); /* Degradado de fondo */
+     background: url(https://images.unsplash.com/photo-1711397651462-3b2a22f5cfc8?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FtcG8lMjBkZSUyMGFncmljdWx0dXJhfGVufDB8fDB8fHww);
+	 background-size: cover;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px; /* Bordes más redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    width: 400px;
+    text-align: center; /* Centra el texto dentro del contenedor */
+    transition: transform 0.3s; /* Transición para el efecto hover */
+}
+
+.container:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+h2 {
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s; /* Transición para el borde */
+}
+
+input:focus {
+    border-color: #5cb85c; /* Color del borde al enfocar */
+    outline: none; /* Eliminar el contorno por defecto */
+}
+
+button {
+    width: 40%;
+    padding: 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones para el botón */
+}
+
+button:hover {
+    background-color: #4cae4c;
+    transform: translateY(-2px); /* Efecto de elevar el botón al pasar el mouse */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container1{
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+.button-container1 {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; /* Negrita para las etiquetas */
+}
+
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #4CAF50; /* Cambia el borde a verde al enfocar */
+    outline: none; /* Elimina el contorno predeterminado */
+}
+
+textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 80px; /* Altura mínima para el área de texto */
+}

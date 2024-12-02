@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Puedes usar el mismo CSS o uno diferente -->
+    <script>
+        function redirigirPagina(pagina) {
+            window.location.href = pagina; // Redirige a la página especificada
+        }
+    </script>
+</head>
+<body>
+    <div class="container1">
+        <h1>Menú Principal</h1>
+        <div class="button-container">
+            <button onclick="redirigirPagina('registrar_cosecha.html')">Registrar Cosecha</button>
+            <button onclick="redirigirPagina('historico_cosecha.html')">Histórico de Cosecha</button>
+            <button onclick="redirigirPagina('registrar_cultivo.html')">Registrar Cultivo</button>
+        </div>
+    </div>
+</body>
+</html>
