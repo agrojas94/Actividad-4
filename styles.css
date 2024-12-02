@@ -13,19 +13,19 @@ body {
 .container {
     background-color: white;
     padding: 20px;
-    border-radius: 10px; /* Bordes más redondeados */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    border-radius: 10px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
     width: 400px;
-    text-align: center; /* Centra el texto dentro del contenedor */
-    transition: transform 0.3s; /* Transición para el efecto hover */
+    text-align: center;
+    transition: transform 0.3s; 
 }
 
 .container:hover {
-    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+    transform: scale(1.05);
 }
 
 h2 {
-    margin-bottom: 20px; /* Espacio debajo del título */
+    margin-bottom: 20px; 
 }
 
 .form-group {
@@ -42,12 +42,12 @@ input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    transition: border-color 0.3s; /* Transición para el borde */
+    transition: border-color 0.3s; 
 }
 
 input:focus {
-    border-color: #5cb85c; /* Color del borde al enfocar */
-    outline: none; /* Eliminar el contorno por defecto */
+    border-color: #5cb85c; 
+    outline: none;
 }
 
 button {
@@ -58,12 +58,12 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Transiciones para el botón */
+    transition: background-color 0.3s, transform 0.3s; 
 }
 
 button:hover {
     background-color: #4cae4c;
-    transform: translateY(-2px); /* Efecto de elevar el botón al pasar el mouse */
+    transform: translateY(-2px); 
 }
 
 body {
@@ -107,13 +107,13 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+    background-color: #45a049; 
 }
 
 label {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold; /* Negrita para las etiquetas */
+    font-weight: bold; 
 }
 
 input[type="date"],
@@ -124,18 +124,18 @@ textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    box-sizing: border-box; 
 }
 
 input[type="date"]:focus,
 input[type="number"]:focus,
 select:focus,
 textarea:focus {
-    border-color: #4CAF50; /* Cambia el borde a verde al enfocar */
-    outline: none; /* Elimina el contorno predeterminado */
+    border-color: #4CAF50;
+    outline: none;
 }
 
 textarea {
-    resize: vertical; /* Permite redimensionar verticalmente */
-    min-height: 80px; /* Altura mínima para el área de texto */
+    resize: vertical; 
+    min-height: 80px; 
 }
